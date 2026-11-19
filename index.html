@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Language Learning – Вивчення слів</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>📚 LANGUAGE LEARNING</h1>
+            <p class="subtitle">Перевір свої знання англійської мови!</p>
+        </header>
+
+        <section class="statistics">
+            <div class="stat">
+                <span>Поточний крок</span>
+                <strong id="step">1 / 10</strong>
+            </div>
+
+            <div class="stat correct">
+                <span>Правильно</span>
+                <strong id="correct">0</strong>
+            </div>
+
+            <div class="stat incorrect">
+                <span>Неправильно</span>
+                <strong id="incorrect">0</strong>
+            </div>
+        </section>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <section class="game">
+
+            <p class="instruction">
+                Переклади слово українською мовою.
+                Введи відповідь і натисни на картку.
+            </p>
+
+            <div id="wordCard" class="word-card"
+                 role="button" tabindex="0"
+                 aria-label="Перевірити переклад">
+                <span class="card-label">ENGLISH WORD</span>
+                <h2 id="englishWord">Apple</h2>
+                <span class="card-hint">Натисни для перевірки</span>
+            </div>
+
+            <label for="translation">Твій переклад:</label>
+
+            <input
+                type="text"
+                id="translation"
+                placeholder="Введи переклад..."
+                autocomplete="off"
+                maxlength="50"
+            >
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <button id="checkButton">Перевірити</button>
+            <button id="nextButton" disabled>Наступне слово →</button>
+
+        </section>
+
+        <button id="restartButton" class="restart">
+            ↻ Почати заново
+        </button>
+
+    </main>
+    
+    <div id="resultModal" class="modal"
+         role="dialog" aria-modal="true"
+         aria-labelledby="resultTitle">
+
+        <div class="modal-content">
+
+            <div class="trophy">🏆</div>
+
+            <h2 id="resultTitle">Тест завершено!</h2>
+
+            <p id="resultScore"></p>
+
+            <h3 id="knowledgeLevel"></h3>
+
+            <p id="resultDescription"></p>
+
+            <button id="playAgain">
+                Пройти ще раз
+            </button>
+
+        </div>
+    </div>
+
+</body>
+</html>
